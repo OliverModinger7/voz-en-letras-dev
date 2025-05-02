@@ -1,0 +1,118 @@
+.eligeServiciosSection {
+  padding: 60px 0;
+  border-radius: 20px;
+  margin: 0 300px;
+  text-align: center;
+  /* box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal; 
+  color: #1C4645;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 90px;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Card con degradado, contenido centrado y espaciamiento */
+.card {
+  background: linear-gradient(to right, #1C4645 0%, #367C7A 50%, #1C4645 100%);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  color: #fff;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+  
+  /* Centramos todo el contenido internamente */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  align-items: center;
+  text-align: left;
+}
+
+/* Asegurar que el ícono esté centrado y con margen inferior */
+.icon {
+  margin-bottom: 15px;
+}
+
+/* Ajustamos el título de cada plan */
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold; 
+  color: #ffffff;
+}
+
+.card p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal;
+  text-align: left;
+}
+
+/* Espaciamos la lista y evitamos que se sienta apretada */
+.card ul li {
+  list-style: none;  /* Asegúrate de que esté en none si usas pseudo-elemento */
+  position: relative; /* Para posicionar el pseudo-elemento si es necesario */
+  padding-left: 1.2em; /* Espacio para el marcador */
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  font-weight: normal; 
+  color: #ffffff;
+}
+
+.card ul li::before {
+  content: "• "; /* Aquí defines el punto o cualquier carácter que desees */
+  color: inherit; /* O puedes asignarle un color específico */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+/* Precio en negrita */
+.price {
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Botón con estilos definitivos */
+.button {
+  background-color: #FFB503;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.button:hover {
+  background-color: #e69a00;
+}
+
+/* Responsividad: en pantallas pequeñas se apila el grid */
+@media (max-width: 768px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+}

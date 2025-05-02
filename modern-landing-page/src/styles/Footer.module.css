@@ -1,0 +1,41 @@
+.footer {
+    background-color: #367C7A; /* Ajusta el color a tu preferencia (#084c41, #157a6a, etc.) */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .contactContainer {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+  }
+  
+  .contactItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .icon {
+    width: 24px;  /* Ajusta el tamaño del ícono */
+    height: 24px; /* Ajusta el tamaño del ícono */
+    object-fit: contain;
+    /* Si usas un icono vectorial con react-icons, omite esta clase */
+  }
+  
+  /* Responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .contactContainer {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  

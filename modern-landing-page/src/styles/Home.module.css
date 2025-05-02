@@ -1,0 +1,139 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.land {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px; /* Ajusta el espacio a tu preferencia */
+  background-color: #fff; /* Fondo blanco */
+  color: #1C4645; /* Color principal del texto (verde oscuro) */
+  margin: 0 300px; /* Espacio superior e inferior */
+}
+
+/* Sección del logo */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color: #1C4645; /* Asegúrate de que coincida con el estilo del nav */
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #1C4645;
+}
+.logo p {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav a {
+  margin-left: 40px; /* Espaciado entre enlaces */
+  text-decoration: none;
+  font-weight: bold;
+  color: #367C7A;
+  font-family: 'Inter', sans-serif;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.overlay h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #FFB503;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #FFB503;
+}
+
+/* Botón de contacto */
+.contactButton {
+  background-color: #FFB503; /* Color amarillo/naranja */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.separator a{
+  text-decoration: none;
+  color: #ffffff; /* Color del texto */
+  font-weight: bold;
+
+}
+
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contactButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .overlay h2 {
+    font-size: 20px;
+  }
+
+  .button {
+    width: 100%;
+    padding: 15px;
+  }
+}
+

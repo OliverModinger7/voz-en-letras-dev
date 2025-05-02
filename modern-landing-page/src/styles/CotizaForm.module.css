@@ -1,0 +1,114 @@
+.formSection {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 20px;
+    margin: 50px auto;
+    max-width: 700px; /* Ajusta el ancho máximo a tu gusto */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+    color: #084c41;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold; 
+  }
+  
+  /* El formulario */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left; /* Para alinear etiquetas e inputs */
+  }
+  
+  /* Fila con 2 campos lado a lado */
+  .formRow {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Cada grupo de etiqueta + input/select/textarea */
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #367C7A;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+  }
+  
+  /* Estilo de inputs, selects y textarea */
+  .formGroup input,
+  .formGroup select,
+  .formGroup textarea {
+    border: 2px solid #FEC930; /* Color dorado/amarillo */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+  }
+  
+  /* Placeholder en color dorado */
+  .formGroup input::placeholder,
+  .formGroup textarea::placeholder {
+    color: #FEC930;
+  }
+  
+  /* Botón de envío */
+  .submitButton {
+    align-self: center;
+    background-color: #FFB503;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold; 
+  }
+  
+  .submitButton:hover {
+    background-color: #e69a00;
+  }
+
+  /* Deshabilita el botón cuando loading */
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mensajes de feedback */
+.successMessage {
+  margin-top: 20px;
+  color: #157a6a;
+  font-weight: bold;
+}
+
+.errorMessage {
+  margin-top: 20px;
+  color: #e65c00;
+  font-weight: bold;
+}
+
+  
+  /* Responsividad para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .formRow {
+      flex-direction: column;
+    }
+  }
+  

@@ -1,0 +1,21 @@
+.finSection {
+    background-color: #fefefc; /* Tono claro */
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .logoContainer {
+    margin-bottom: 10px;
+  }
+  
+  .logoContainer img {
+    /* Si quieres ajustarlo con CSS en vez de los props de <Image> */
+    max-width: 50px;
+  }
+  
+  .copyright {
+    color: #084c41;
+    font-size: 0.9rem;
+  }
+  

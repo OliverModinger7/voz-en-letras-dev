@@ -1,0 +1,117 @@
+.section {
+    padding: 50px 50px;
+  }
+  
+  .twoColumn {
+    display: grid;
+    /* La primera columna (área 'que') será más ancha: 2fr; y la segunda (área 'si') 3fr */
+    grid-template-columns: 2fr 3fr;
+    gap: 40px;
+    padding: 0px;
+    margin: 50px 250px;
+    /* Define las áreas en el orden deseado: la card "Si eres..." a la izquierda y "¿Qué hacemos?" a la derecha */
+    grid-template-areas: "que si";
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 5px 10px 5px rgba(0,0,0,0.1);
+    padding: 40px 20px 50px 40px;
+  }
+
+  .p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #1C4645;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    margin: 50px;
+  }
+
+  .que {
+    grid-area: que;
+  }
+
+  .si {
+    grid-area: si;
+  }
+  
+  .strong {
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+    color: #1C4645;
+    font-size: 2rem;
+    margin-left: 40px;
+  }
+
+  .fourColumn {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+    justify-items: start;
+  }
+  
+  .iconCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .icon {
+    width: 100px;
+    height: auto;
+  }
+  
+  .card h2 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .textContainer h3 {
+    display: block; 
+    margin-left: 20px;
+    font-size: 1.3rem;
+    color: #1C4645;
+    font-family: 'Inter', sans-serif;
+
+  }
+
+  .textContainer p {
+    display: block;  
+    text-align: left;
+    margin-left: 20px;
+    max-width: 70%;
+    font-size: 1.05rem;
+    color: #1C4645;
+    font-family: 'Inter', sans-serif;
+    
+  }
+ 
+  
+
+  @media (max-width: 768px) {
+    .twoColumn {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "si"
+        "que";
+    }
+  }
+
+

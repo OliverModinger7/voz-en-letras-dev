@@ -1,0 +1,33 @@
+{
+  "name": "voz-en-letras-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend Next.js para Voz en Letras",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "keywords": [
+    "nextjs",
+    "landing-page",
+    "typescript"
+  ],
+  "author": "Oliver Modinger",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/mongoose": "^11.0.3",
+    "mongoose": "^8.13.2",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.5",
+    "@types/react": "19.0.2",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "typescript": "latest"
+  }
+}

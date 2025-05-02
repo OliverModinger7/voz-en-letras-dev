@@ -1,0 +1,112 @@
+.landSection {
+  position: relative;
+  background-color: #ffffff;
+  margin: 0 300px;
+  border-radius: 50px;
+  overflow: hidden; /* Para que la imagen y el overlay respeten el borde redondeado */
+  }
+
+  .main {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ajusta la altura según tu necesidad */
+    background-image: url("/Transcripcion.jpg"); /* Asegúrate de que la imagen esté en public/ */
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+  }
+
+  .colorOverlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* necesito que el centro se vea mas tranparente */
+    background: 
+    linear-gradient(to right, rgba(28, 70, 69, 0.8), rgba(28, 70, 69, 0.164), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) ),
+    linear-gradient(to left, rgba(28, 70, 69, 0.8), rgba(28, 70, 69, 0.5), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 40px;
+  }
+
+  .colorOverlay h1 {
+    font-size: 3.3rem;
+    max-width: 400px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+    color: #1C4645;
+  }
+
+  .colorOverlay p {
+    font-size: 2rem;
+    color: #1C4645;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    max-width: 400px;
+    font-weight: normal;
+  }
+
+  
+  /* Título en dos líneas con fuente "Inter" y color verde */
+  .title {
+    font-size: 3.3rem;
+    margin-left: 50px;
+    max-width: 250px;
+    height: 200px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+    color: #1C4645;
+  }
+  
+  /* Subtítulo en color verde y fuente "Inter" */
+  .subtitle {
+    font-size: 2rem;
+    margin-left: 50px;
+    max-width: 400px;
+    padding-bottom: 100px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+    color: #1C4645;
+  }
+  
+  .colorOverlay button {
+    background-color: #FFB503;
+    color: #fff;
+    border: none;
+    width: 400px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-left: 50px;
+    max-width: 400px;
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+  }
+  
+  .colorOverlay button:hover {
+    background-color: #e65c00;
+  }
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .button {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+  }
+}
