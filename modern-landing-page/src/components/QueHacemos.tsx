@@ -3,7 +3,7 @@ import styles from '../styles/QueHacemos.module.css';
 
 export default function QueHacemos() {
   return (
-    <section className={styles.section}>
+    <section id="que-hacemos" className={styles.section}>
       <div className={styles.twoColumn}>
         {/* Card para "¿Qué hacemos?" */}
         <div className={`${styles.card} ${styles.que}`}>

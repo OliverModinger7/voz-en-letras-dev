@@ -22,7 +22,9 @@ export default function SumarServicio() {
             </p>
           </div>
 
-          <button className={styles.button}>SUMAR TRADUCCION</button>
+          <a href="#contacto" className={styles.button}>
+            SUMAR TRADUCCION
+          </a>
         </div>
         {/* Tarjeta 2: Subtítulos */}
         <div className={styles.card}>
@@ -38,7 +40,9 @@ export default function SumarServicio() {
             </p>
           </div>
 
-          <button className={styles.button}>SUMAR SUBTITULOS</button>
+          <a href="#contacto" className={styles.button}>
+            SUMAR SUBTITULOS
+          </a>
         </div>
       </div>
     </section>

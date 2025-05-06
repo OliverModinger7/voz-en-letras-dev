@@ -4,15 +4,14 @@ import Image from 'next/image';
 
 export default function EligeServicios() {
   return (
-    <section className={styles.eligeServiciosSection}>
+    <section id="servicios" className={styles.eligeServiciosSection}>
       <h2 className={styles.title}>Elige el servicio que necesitas</h2>
       <div className={styles.cardsContainer}>
-        {/* Card 1: Plan Básico */}
         <div className={styles.card}>
           <h3>Plan Básico</h3>
           <div className={styles.icon}>
             <Image
-              src="/PlanBasico.png" // Asegúrate de que el archivo se encuentre en public/
+              src="/PlanBasico.png"
               alt="Plan Básico"
               width={100}
               height={100}
@@ -25,7 +24,9 @@ export default function EligeServicios() {
             <li>Entrega en 72 hrs.</li>
           </ul>
           <p className={styles.price}>Precio: $150/minuto</p>
-          <button className={styles.button}>Elegir Plan Básico</button>
+          <a href="#contacto" className={styles.button}>
+             Elegir Plan Básico
+          </a>
         </div>
 
         {/* Card 2: Plan Profesional */}
@@ -46,7 +47,9 @@ export default function EligeServicios() {
             <li>Entrega en 48 hrs.</li>
           </ul>
           <p className={styles.price}>Precio: $220/minuto</p>
-          <button className={styles.button}>Elegir Plan Profesional</button>
+          <a href="#contacto" className={styles.button}>
+            Elegir Plan Profesional
+          </a>
         </div>
 
         {/* Card 3: Plan Premium */}
@@ -67,7 +70,9 @@ export default function EligeServicios() {
             <li>Entrega en 24 hrs.</li>
           </ul>
           <p className={styles.price}>Precio: $300/minuto</p>
-          <button className={styles.button}>Elegir Plan Premium</button>
+          <a href="#contacto" className={styles.button}>
+            Elegir Plan Premium
+          </a>
         </div>
       </div>
     </section>

@@ -100,11 +100,16 @@
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease;
-    display: block;
-    margin: 10px auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin: 0px auto;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
   }
+
   
   
   .button:hover {

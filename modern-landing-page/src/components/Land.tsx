@@ -14,9 +14,9 @@ const Land: React.FC = () => {
           <p className={styles.subtitle}>
             De manera rápida y precisa
           </p>
-          <button className={styles.button}>
+          <a href="#contacto" className={styles.button}>
             Cotiza ahora desde $150 CLP/minuto
-          </button>
+          </a>
         </div>
       </div>
     </section>

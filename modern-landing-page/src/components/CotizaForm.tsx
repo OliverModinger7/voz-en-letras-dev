@@ -44,7 +44,7 @@ const CotizaForm: React.FC = () => {
   };
 
   return (
-    <section className={styles.formSection}>
+    <section id="contacto" className={styles.formSection}>
       <h2 className={styles.title}>Cotiza con nosotros_</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
         {/* Nombre y apellido */}
