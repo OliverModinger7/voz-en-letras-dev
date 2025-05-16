@@ -117,23 +117,42 @@
 
 /* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
+  /* 1) Navegación apilada */
   .header {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .contactButton {
-    width: 100%;
-    text-align: center;
+  .nav a {
+    display: block;
+    margin: 0.5rem 0;
   }
 
-  .overlay h2 {
-    font-size: 20px;
+  /* 2) Grid de dos columnas → 1 columna */
+  .twoColumn {
+    grid-template-columns: 1fr !important;
   }
 
-  .button {
+  /* 3) Texto e imágenes más ajustados */
+  .card, .feature-card {
+    padding: 1rem;
+    margin: 0.5rem 0;
+  }
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+  p, li {
+    font-size: 0.9rem;
+  }
+
+  /* 4) Botones full-width */
+  .button, .submitButton {
+    display: block;
     width: 100%;
-    padding: 15px;
+    padding: 0.75rem;
+  }
+
+  /* 5) Espaciados generales */
+  .container {
+    padding: 1rem;
   }
 }
-
