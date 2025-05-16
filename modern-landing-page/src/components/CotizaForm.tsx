@@ -23,7 +23,7 @@ const CotizaForm: React.FC = () => {
 
     try {
       await submitForm(
-        `${process.env.NEXT_PUBLIC_API_URL}/formularios`,
+        `${process.env.production.NEXT_PUBLIC_API_URL}/api/formularios`,
         { nombre, email, telefono, empresa, plan, servicioExtra, detalles }
       );
       setStatus('success');
