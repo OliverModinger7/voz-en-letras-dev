@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>Voz en Letras</title>
         <meta name="description" content="Transcripción de audios a texto" />
-        <link rel="icon" href="/logoFooter.png" />
+        <link rel="icon" href="../../public/logoFooter.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
