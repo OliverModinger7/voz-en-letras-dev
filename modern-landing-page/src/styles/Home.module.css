@@ -137,10 +137,16 @@
     padding: 1rem;
     margin: 0.5rem 0;
   }
-  .card h2, h3 {
+  h2 {
     font-size: 1.2rem;
   }
-  .card p, li {
+  h3 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  li {
     font-size: 0.9rem;
   }
 
