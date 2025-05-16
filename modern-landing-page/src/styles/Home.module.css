@@ -1,164 +1,163 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  background-color: #f9f9f9;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem;
+background-color: #f9f9f9;
 }
 
 .hero {
-  text-align: center;
-  margin-bottom: 2rem;
+text-align: center;
+margin-bottom: 2rem;
 }
 
 .land {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-position: center;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-position: center;
 }
 
 /* Encabezado */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px; /* Ajusta el espacio a tu preferencia */
-  background-color: #fff; /* Fondo blanco */
-  color: #1C4645; /* Color principal del texto (verde oscuro) */
-  margin: 0 300px; /* Espacio superior e inferior */
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 40px;
+background-color: #fff;
+color: #1C4645;
+margin: 0 300px;
 }
 
 /* Sección del logo */
 .logo {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
-
 .logo h1 {
-  margin-left: 10px;
-  font-size: 1.5rem;
-  color: #1C4645; /* Asegúrate de que coincida con el estilo del nav */
-  font-weight: bold;
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
-  color: #1C4645;
+margin-left: 10px;
+font-size: 1.5rem;
+color: #1C4645;
+font-weight: bold;
+font-family: 'Inter', sans-serif;
 }
 .logo p {
-  margin: 0;
-  font-size: 20px;
+margin: 0;
+font-size: 20px;
 }
 
 /* Navegación */
 .nav {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
-
 .nav a {
-  margin-left: 40px; /* Espaciado entre enlaces */
-  text-decoration: none;
-  font-weight: bold;
-  color: #367C7A;
-  font-family: 'Inter', sans-serif;
+margin-left: 40px;
+text-decoration: none;
+font-weight: bold;
+color: #367C7A;
+font-family: 'Inter', sans-serif;
 }
-
 .nav a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
+.separator a {
+text-decoration: none;
+color: #ffffff;
+font-weight: bold;
+}
+
+/* Overlay y botón */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px 40px;
-  border-radius: 10px;
-  text-align: center;
+background-color: rgba(0, 0, 0, 0.5);
+padding: 20px 40px;
+border-radius: 10px;
+text-align: center;
 }
-
 .overlay h2 {
-  color: white;
-  font-size: 24px;
-  margin-bottom: 20px;
+color: #fff;
+font-size: 24px;
+margin-bottom: 20px;
 }
-
 .button {
-  background-color: #FFB503;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
+background-color: #FFB503;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+border-radius: 5px;
+text-decoration: none;
+display: inline-block;
 }
-
 .button:hover {
-  background-color: #FFB503;
+background-color: #e69a00;
 }
 
 /* Botón de contacto */
 .contactButton {
-  background-color: #FFB503; /* Color amarillo/naranja */
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  margin-left: 20px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+background-color: #FFB503;
+color: #fff;
+padding: 10px 20px;
+border-radius: 30px;
+margin-left: 20px;
+font-weight: bold;
+transition: background-color 0.3s ease;
+text-decoration: none;
+display: inline-block;
+}
+.contactButton:hover {
+background-color: #e69a00;
 }
 
-.separator a{
-  text-decoration: none;
-  color: #ffffff; /* Color del texto */
-  font-weight: bold;
-
-}
-
-
-
-/* Media Queries para pantallas pequeñas */
+/* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
-  /* 1) Navegación apilada */
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
+.header {
+flex-direction: column;
+align-items: flex-start;
+padding: 10px 20px;
+margin: 0 20px;
+}
 
-  /* 2) Grid de dos columnas → 1 columna */
-  .twoColumn {
-    grid-template-columns: 1fr !important;
-  }
+.nav {
+flex-direction: column;
+width: 100%;
+}
+.nav a {
+margin: 10px 0;
+font-size: 0.9rem;
+margin-left: 0;
+}
 
-  /* 3) Texto e imágenes más ajustados */
-  .card, .feature-card {
-    padding: 1rem;
-    margin: 0.5rem 0;
-  }
-  h2 {
-    font-size: 1.2rem;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  p {
-    font-size: 0.9rem;
-  }
-  li {
-    font-size: 0.9rem;
-  }
+.logo h1 {
+font-size: 1.25rem;
+margin-left: 8px;
+}
 
-  /* 4) Botones full-width */
-  .button, .submitButton {
-    display: block;
-    width: 100%;
-    padding: 0.75rem;
-  }
+.overlay {
+padding: 15px 20px;
+}
+.overlay h2 {
+font-size: 20px;
+}
 
-  /* 5) Espaciados generales */
-  .container {
-    padding: 1rem;
-  }
+.button,
+.contactButton {
+display: block;
+width: 100%;
+text-align: center;
+}
+
+.home,
+.hero,
+.land {
+padding: 1rem;
+margin: 0;
+}
+
+.land {
+height: auto;
+}
 }
