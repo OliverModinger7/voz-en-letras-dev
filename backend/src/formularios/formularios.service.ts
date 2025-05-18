@@ -3,35 +3,38 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateFormularioDto } from './dto/create-formulario.dto';
 import { UpdateFormularioDto } from './dto/update-formulario.dto';
-import { Formulario, FormularioDocument } from './schemas/formulario.schema';
+import { Formulario, FormularioDocument } from './formulario.schema';
 
 @Injectable()
 export class FormulariosService {
   constructor(
-    @InjectModel(Formulario.name)
-    private readonly formModel: Model<FormularioDocument>,
+    @InjectModel(Formulario.name) private model: Model<FormularioDocument>,
   ) {}
 
-
-  async create(dto: CreateFormularioDto) {
-    const created = new this.formModel(dto);
-    return created.save();
+  create(dto: CreateFormularioDto) {
+    const doc = new this.model(dto);
+    return doc.save();
   }
 
-  /** Devuelve todos los formularios */
-  async findAll(): Promise<Formulario[]> {
-    return this.formModel.find().exec();
+  findAll() {
+    return this.model.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} formulario`;
+  async findOne(id: string) {
+    const doc = await this.model.findById(id).exec();
+    if (!doc) throw new NotFoundException('Formulario not found');
+    return doc;
   }
 
-  update(id: number, updateFormularioDto: UpdateFormularioDto) {
-    return `This action updates a #${id} formulario`;
+  async update(id: string, dto: UpdateFormularioDto) {
+    const doc = await this.model.findByIdAndUpdate(id, dto, { new: true }).exec();
+    if (!doc) throw new NotFoundException('Formulario not found');
+    return doc;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} formulario`;
+  async remove(id: string) {
+    const res = await this.model.findByIdAndDelete(id).exec();
+    if (!res) throw new NotFoundException('Formulario not found');
+    return { deleted: true };
   }
 }
