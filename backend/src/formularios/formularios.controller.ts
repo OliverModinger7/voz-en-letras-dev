@@ -12,23 +12,4 @@ export class FormulariosController {
     return this.formulariosService.create(dto);
   }
 
-  @Get()
-  findAll() {
-    return this.formulariosService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.formulariosService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateFormularioDto: UpdateFormularioDto) {
-    return this.formulariosService.update(+id, updateFormularioDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.formulariosService.remove(+id);
-  }
 }
