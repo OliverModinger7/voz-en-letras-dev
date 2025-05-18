@@ -1,20 +1,12 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { FormulariosService } from './formularios.service';
+import { Formulario, FormularioSchema } from './formulario.schema';
 import { FormulariosController } from './formularios.controller';
-import { Formulario, FormularioSchema } from './schemas/formulario.schema';
+import { FormulariosService } from './formularios.service';
 
 @Module({
   imports: [
-    MongooseModule.forFeature(
-      [
-        {
-          name: Formulario.name,
-          schema: FormularioSchema,
-          collection: 'formularios'
-        }
-      ]
-    ),
+    MongooseModule.forFeature([{ name: Formulario.name, schema: FormularioSchema }]),
   ],
   controllers: [FormulariosController],
   providers: [FormulariosService],
