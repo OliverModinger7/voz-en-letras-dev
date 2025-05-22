@@ -6,6 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   // Global validation and CORS
+  app.setGlobalPrefix('api');
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true, transform: true }));
   app.enableCors({
     origin: ['https://vozenletras.cl', 'https://www.vozenletras.cl'],
@@ -14,7 +15,6 @@ async function bootstrap() {
     credentials: true,
   });
 
-  app.setGlobalPrefix('api');
   await app.listen(process.env.PORT || 3001);
 }
 bootstrap();

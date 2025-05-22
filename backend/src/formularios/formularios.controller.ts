@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus } from '@nestjs/common';
 import { FormulariosService } from './formularios.service';
 import { CreateFormularioDto } from './dto/create-formulario.dto';
 import { UpdateFormularioDto } from './dto/update-formulario.dto';
@@ -9,7 +9,14 @@ export class FormulariosController {
 
   @Post()
   async create(@Body() dto: CreateFormularioDto) {
-    return this.formulariosService.create(dto);
+    try {
+      return await this.formulariosService.create(dto);
+    } catch (error) {
+      throw new HttpException(
+        { message: 'Error al crear el formulario', error: error.message },
+        HttpStatus.BAD_REQUEST,
+      );
+    }
   }
 
 }
