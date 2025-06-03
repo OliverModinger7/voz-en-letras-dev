@@ -1,125 +1,183 @@
 .sumarServicioSection {
-    padding: 10px 0px;
-    text-align: center;
-    margin: 0 300px;
-    /* Sin contenedor adicional; el section es el contenedor */
+  padding: 60px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  color: #1C4645;
+}
+
+/* Grid de cards igual que EligeServicios */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.card {
+  background: linear-gradient(to right, #1C4645 0%, #367C7A 50%, #1C4645 100%);
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+/* Layout interno de cada card */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card ul {
+  list-style: disc inside;
+  margin: 0;
+  padding-left: 20px;
+  flex: 1;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+/* Estilo del precio resaltado */
+.price {
+  border: 2.5px solid #FEC930;
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  white-space: nowrap;
+  color: #ffffff;
+}
+
+.priceValue {
+  font-size: 1.4rem;
+}
+
+.priceUnit {
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* Botón igual estilo que EligeServicios */
+.button {
+  background-color: #FFB503;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  align-self: center;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.button:hover {
+  background-color: #e69a00;
+}
+
+/* Apilar en mobile */
+@media (max-width: 768px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  
-  .title {
-    font-size: 1.8rem;
-    margin: 40px;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold; 
-    color: #1C4645;
-  }
-  
-  /* Grid de 2 columnas para las tarjetas */
-  .twoColumn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 90px;
-    justify-items: center;
-    align-items: start;    
-  }
-  
   .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column;
   }
 
-
-  /* Tarjetas con degradado (extremos oscuros, centro más claro) */
-  .card {
-    background: linear-gradient(to right, #1C4645 0%, #367C7A 50%, #1C4645 100%);
-    border-radius: 30px;
-    padding: 20px;
-    width: 100%;
-    margin: 10px;
-    height: 100%;
-    color: #fff;
-    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .card h3 {
-    margin: 10px 20px 20px;
-    font-size: 1.5rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: normal; 
-  }
-  
   .card ul {
-    list-style-type: disc;
-    padding-left: 60px;
-    margin: 0 20px 20px;
-    max-width: 100%;
-    text-align: left;
-    font-family: 'Inter', sans-serif;
-    font-weight: normal; 
+    padding-left: 0;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .card ul li {
+    margin-bottom: 8px; /* Leve disminución si es necesario */
+    font-size: 0.8rem;  /* Disminuido de 1rem */
+  }
+
+  .icon {
+    margin: 0 auto 15px;
+    width: 70px; /* Ajustamos el tamaño del icono */
+    height: 70px; /* Ajustamos el tamaño del icono */
   }
   
 
   .price {
-    border: 2.5px solid #FFB503;
-    border-radius: 15px;
-    padding: 20px 20px;
-    margin-right: 30px;
-    font-weight: bold;
-    color: white;
-    white-space: nowrap;
-    align-self: flex-start;
-    font-family: 'Inter', sans-serif;
-    font-weight: normal; 
-  }
-  
-  .priceValue {
-    font-size: 1.4rem;
-    font-weight: bold;
-    
-  }
-  
-  /* Letras pequeñas */
-  .priceUnit {
-    font-size: 0.8rem;
-    margin-left: 4px;
-    vertical-align: middle;
-  }
-
-  
-  /* Botón */
-  .button {
-    background-color: #FFB503;
-    color: #fff;
-    padding: 10px 20px;
     text-align: center;
-    font-size: 16px;
-    border: 2px solid #FFB503;
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 50px;
-    margin: 0px auto;
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
+    margin-bottom: 15px;
   }
 
-  
-  
-  .button:hover {
-    background-color: #e69a00;
+  .button {
+    width: 80%;
+    text-align: center;
+    padding: 10px 0;  /* Antes 12px 0 */
+    font-size: 0.9rem; /* Disminuido de 1rem */
+  }
+
+  .button a {
+    color: #fff; /* Aseguramos que el enlace dentro del botón sea blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .priceValue {
+    font-size: 1.2rem;
   }
   
-  /* Responsividad: a pantallas pequeñas, 1 columna */
-  @media (max-width: 768px) {
-    .twoColumn {
-      grid-template-columns: 1fr;
-    }
+
+
+  .priceUnit {
+    font-size: 0.7rem;
   }
-  
+
+  .card {
+    padding: 15px;
+  }
+
+  .row {
+    gap: 5px;
+  }
+
+}

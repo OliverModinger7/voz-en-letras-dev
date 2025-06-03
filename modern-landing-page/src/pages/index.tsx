@@ -12,6 +12,7 @@ import SumarServicio from '../components/SumarServicio';
 import CotizaForm from '../components/CotizaForm';
 import Fin from '../components/Fin';
 
+
 export default function Home() {
   return (
     <div>
@@ -26,16 +27,13 @@ export default function Home() {
       </Head>
 
       <Header />
-      <Land />
 
-      {/* Sección nueva */}
+      <Land />
       <QueHacemos />
       <TrabajamosCon />
       <EligeServicios />
       <SumarServicio />
       <CotizaForm />
-      <Footer />
-      <Fin />
     </div>
   );
 }

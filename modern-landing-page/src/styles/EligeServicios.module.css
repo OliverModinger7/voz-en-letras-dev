@@ -1,118 +1,156 @@
 .eligeServiciosSection {
-  padding: 60px 0;
-  border-radius: 20px;
-  margin: 0 300px;
+  padding: 60px 20px;
+  margin: 0 auto;
+  max-width: 1200px;
   text-align: center;
-  /* box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .title {
   font-size: 1.8rem;
   margin-bottom: 40px;
   font-family: 'Inter', sans-serif;
-  font-weight: bold; 
+  font-weight: bold;
   color: #1C4645;
 }
 
 .cardsContainer {
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
-  gap: 90px;
+  gap: 40px;
   justify-items: center;
-  align-items: start;
 }
 
-/* Card con degradado, contenido centrado y espaciamiento */
 .card {
   background: linear-gradient(to right, #1C4645 0%, #367C7A 50%, #1C4645 100%);
   border-radius: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 600px;
-  height: 500px;
+  max-width: 350px;
   color: #fff;
-  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
-  
-  /* Centramos todo el contenido internamente */
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly; 
   align-items: center;
   text-align: left;
 }
 
-/* Asegurar que el ícono esté centrado y con margen inferior */
 .icon {
   margin-bottom: 15px;
 }
 
-/* Ajustamos el título de cada plan */
 .card h3 {
-  margin: 0 0 10px;
   font-size: 1.5rem;
-  font-family: 'Inter', sans-serif;
-  font-weight: bold; 
-  color: #ffffff;
-}
-
-.card p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-weight: normal;
-  text-align: left;
-}
-
-/* Espaciamos la lista y evitamos que se sienta apretada */
-.card ul li {
-  list-style: none;  /* Asegúrate de que esté en none si usas pseudo-elemento */
-  position: relative; /* Para posicionar el pseudo-elemento si es necesario */
-  padding-left: 1.2em; /* Espacio para el marcador */
-  text-align: left;
-  font-family: 'Inter', sans-serif;
-  font-weight: normal; 
-  color: #ffffff;
-}
-
-.card ul li::before {
-  content: "• "; /* Aquí defines el punto o cualquier carácter que desees */
-  color: inherit; /* O puedes asignarle un color específico */
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-
-/* Precio en negrita */
-.price {
-  font-weight: bold;
   margin-bottom: 10px;
-  padding: 10px;
-  text-align: left;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Botón con estilos definitivos */
+.card ul {
+  list-style: disc inside;
+  margin: 0 0 15px;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.4;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
 .button {
   background-color: #FFB503;
   color: #fff;
-  border: none;
   padding: 10px 20px;
   border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 .button:hover {
   background-color: #e69a00;
 }
 
-/* Responsividad: en pantallas pequeñas se apila el grid */
 @media (max-width: 768px) {
+  .eligeServiciosSection {
+    padding: 20px 10px; /* Reducimos el padding para pantallas pequeñas */
+  }
+
   .cardsContainer {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Hacemos las cards un poco más pequeñas y reducimos su padding */
+  .card {
+    max-width: 80%; /* Antes era 100% */
+    padding: 10px;  /* Disminuido de 15px */
+  }
+
+  /* Reducimos ligeramente el tamaño de la sección título */
+  .title {
+    font-size: 1.3rem; /* Antes 1.5rem */
+    margin-bottom: 25px; /* Antes 30px */
+  }
+
+  /* Disminuimos los tamaños de las cabeceras dentro de las cards */
+  .card h3 {
+    font-size: 1rem; /* Antes 1.4rem */
+  }
+
+  /* Ajustamos el tamaño del precio */
+  .price {
+    font-size: 0.8rem; /* Antes 1.2rem */
+  }
+
+  /* Si se usan clases para precio, se reducen también */
+  .priceValue {
+    font-size: 0.8rem;
+  }
+
+  .priceUnit {
+    font-size: 0.7rem;
+  }
+
+  /* Reducimos algo el tamaño del botón */
+  .button {
+    width: 80%;
+    text-align: center;
+    padding: 10px 0;  /* Antes 12px 0 */
+    font-size: 0.9rem; /* Disminuido de 1rem */
+  }
+
+  .button:hover {
+    background-color: #e69a00; /* Mantenemos el hover igual */
+  }
+
+  .button a {
+    color: #fff; /* Aseguramos que el enlace dentro del botón sea blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 1rem;
+  }
+
+  /* Reducimos el tamaño de los íconos */
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px; /* Se puede ajustar según convenga */
+  }
+
+  /* Ajustamos la lista dentro de las cards */
+  .card ul {
+    list-style: disc inside;
+  }
+
+  .card ul li {
+    margin-bottom: 8px; /* Leve disminución si es necesario */
+    font-size: 0.8rem;  /* Disminuido de 1rem */
   }
 }
