@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/CotizaForm.module.css';
-import { submitForm } from '../utils/api';
+import { submitForm } from '../utils/api'; // Ajusta la ruta si tu api.ts está en otra carpeta
 
 const CotizaForm: React.FC = () => {
-  // Campos del formulario
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [telefono, setTelefono] = useState('');
@@ -11,8 +10,6 @@ const CotizaForm: React.FC = () => {
   const [plan, setPlan] = useState('');
   const [servicioExtra, setServicioExtra] = useState('');
   const [detalles, setDetalles] = useState('');
-
-  // Estados de UI
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -20,23 +17,15 @@ const CotizaForm: React.FC = () => {
     e.preventDefault();
     setLoading(true);
     setStatus('idle');
-
     try {
       await submitForm(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/formularios`,
+        `${process.env.NEXT_PUBLIC_API_URL}/formularios`,
         { nombre, email, telefono, empresa, plan, servicioExtra, detalles }
       );
       setStatus('success');
-      // Opcional: resetear campos
-      setNombre('');
-      setEmail('');
-      setTelefono('');
-      setEmpresa('');
-      setPlan('');
-      setServicioExtra('');
-      setDetalles('');
-    } catch (err) {
-      console.error(err);
+      setNombre(''); setEmail(''); setTelefono(''); setEmpresa('');
+      setPlan(''); setServicioExtra(''); setDetalles('');
+    } catch {
       setStatus('error');
     } finally {
       setLoading(false);
@@ -44,10 +33,11 @@ const CotizaForm: React.FC = () => {
   };
 
   return (
-    <section id="contacto" className={styles.formSection}>
+    <section className={styles.formSection}>
       <h2 className={styles.title}>Cotiza con nosotros_</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
-        {/* Nombre y apellido */}
+
+        {/* Nombre completo */}
         <div className={styles.formGroup}>
           <label htmlFor="nombre">Nombre y apellido</label>
           <input
@@ -55,11 +45,12 @@ const CotizaForm: React.FC = () => {
             type="text"
             value={nombre}
             onChange={e => setNombre(e.target.value)}
+            //placeholder="Tu nombre completo"
             required
           />
         </div>
 
-        {/* Email y Teléfono */}
+        {/* Email + Teléfono */}
         <div className={styles.formRow}>
           <div className={styles.formGroup}>
             <label htmlFor="email">Email</label>
@@ -68,6 +59,7 @@ const CotizaForm: React.FC = () => {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
+              //placeholder="tucorreo@ejemplo.com"
               required
             />
           </div>
@@ -75,9 +67,10 @@ const CotizaForm: React.FC = () => {
             <label htmlFor="telefono">Teléfono (opcional)</label>
             <input
               id="telefono"
-              type="text"
+              type="tel"
               value={telefono}
               onChange={e => setTelefono(e.target.value)}
+              //placeholder="+56 9 1234 5678"
             />
           </div>
         </div>
@@ -90,6 +83,7 @@ const CotizaForm: React.FC = () => {
             type="text"
             value={empresa}
             onChange={e => setEmpresa(e.target.value)}
+            //placeholder="Nombre de tu empresa"
           />
         </div>
 
@@ -124,7 +118,7 @@ const CotizaForm: React.FC = () => {
           </select>
         </div>
 
-        {/* Detalles del trabajo */}
+        {/* Detalles */}
         <div className={styles.formGroup}>
           <label htmlFor="detalles">Detalles del trabajo</label>
           <textarea
@@ -132,10 +126,11 @@ const CotizaForm: React.FC = () => {
             rows={4}
             value={detalles}
             onChange={e => setDetalles(e.target.value)}
+            placeholder="Describe tu proyecto"
           />
         </div>
 
-        {/* Botón de envío */}
+        {/* Enviar */}
         <button
           type="submit"
           className={styles.submitButton}
@@ -145,16 +140,11 @@ const CotizaForm: React.FC = () => {
         </button>
       </form>
 
-      {/* Mensajes de feedback */}
       {status === 'success' && (
-        <p className={styles.successMessage}>
-          ¡Formulario enviado correctamente!
-        </p>
+        <p className={styles.successMessage}>¡Formulario enviado correctamente!</p>
       )}
       {status === 'error' && (
-        <p className={styles.errorMessage}>
-          Ocurrió un error al enviar. Inténtalo de nuevo.
-        </p>
+        <p className={styles.errorMessage}>Ocurrió un error. Inténtalo de nuevo.</p>
       )}
     </section>
   );

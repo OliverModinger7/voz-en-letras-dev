@@ -1,21 +1,21 @@
-import React from 'react';
 import styles from '../styles/QueHacemos.module.css';
+import React from 'react';
+import Image from 'next/image';
 
-export default function QueHacemos() {
-  return (
-    <section id="que-hacemos" className={styles.section}>
-      <div className={styles.twoColumn}>
-        {/* Card para "¿Qué hacemos?" */}
-        <div className={`${styles.card} ${styles.que}`}>
-          <strong className={styles.strong}>¿Qué hacemos?</strong>
-          <div className={styles.p}>
-            <p>
-              Transformamos tus audios en texto preciso, rápido y confiable. Ya sea que grabes entrevistas, tomes notas de clases o documentes reuniones importantes, nuestro servicio combina tecnología avanzada y revisión humana para garantizar calidad y confidencialidad.
-            </p>
-            </div>  
-        </div>
-        <div className={`${styles.card} ${styles.si}`}>
-          <strong className={styles.strong}>Si eres...</strong>
+
+const QueHacemos = () => (
+  <section className={styles.twoColumn}>
+    <div id="what" className={styles.column}>
+      <h2>¿Qué hacemos?</h2>
+      <p>
+        Transformamos tus audios en texto <strong>preciso, rápido y confiable</strong>.
+        Ya sea que grabes entrevistas, tomes notas de clases o documentes reuniones importantes,
+         nuestro servicio combina <strong>tecnología avanzada y revisión humana</strong> para garantizar calidad y 
+         confidencialidad.
+      </p>
+    </div>
+    <div id="for-who" className={styles.column}>
+      <h2>Si eres...</h2>
           <section className={styles.fourColumn}>
             <div className={styles.iconCard}>
               <img src="/profesional.png" alt="Profesional" className={styles.icon} />
@@ -46,8 +46,8 @@ export default function QueHacemos() {
               </div>
             </div>
           </section>
-        </div>
-      </div>
-    </section>
-  );
-}
+    </div>
+  </section>
+);
+
+export default QueHacemos;
