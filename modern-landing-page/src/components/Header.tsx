@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import styles from '../styles/Header.module.css';
+import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import logo from '../../public/Logo-VozEnLetras.png';
 
