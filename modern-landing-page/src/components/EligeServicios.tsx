@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Servicio.module.css';
+import styles from '../styles/EligeServicios.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 

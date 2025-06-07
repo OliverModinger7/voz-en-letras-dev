@@ -1,9 +1,9 @@
-import styles from '../styles/TwoColumnSection.module.css';
+import styles from '../styles/QueHacemos.module.css';
 import React from 'react';
 import Image from 'next/image';
 
 
-const TwoColumnSection = () => (
+const QueHacemos = () => (
   <section className={styles.twoColumn}>
     <div id="quehacemos" className={styles.column}>
       <h2>¿Qué hacemos?</h2>
@@ -50,4 +50,4 @@ const TwoColumnSection = () => (
   </section>
 );
 
-export default TwoColumnSection;
+export default QueHacemos;
