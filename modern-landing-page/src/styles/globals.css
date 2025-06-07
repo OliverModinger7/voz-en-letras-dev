@@ -10,11 +10,11 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   background-color: #ffffff;
   color: #333;
-  margin-inline: 50px;
+  margin-inline: 30px;
 }
 
 a {
@@ -60,6 +60,9 @@ img {
   background-color: #0070f3;
   color: white;
   transition: background-color 0.3s ease;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
 }
 
 .btn:hover {

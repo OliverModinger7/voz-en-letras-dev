@@ -1,15 +1,39 @@
 .header {
   background: #fff;
   padding: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ /* Asegura que el header esté por encima de otros elementos */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1200px; /* Ajusta según el ancho deseado */
+  margin: 0 auto; /* Centra el header */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  border-radius: 20px; /* Bordes redondeados en la parte inferior */
+  /* Elimina el borde por defecto del botón */
+  border: none;
+  margin: 0 auto;
+} 
+
+.headercontainer {
+  
+  padding: 0 0px; /* Espacio interno para el contenedor */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Asegura que el contenedor esté por encima de otros elementos */
+  background: transparent; /* Fondo transparente para el contenedor */
+
+  position: fixed ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
 }
 
+/* Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
@@ -26,19 +50,13 @@
   align-items: center;
 }
 
-/* Hide desktop nav on mobile */
-@media (max-width: 768px) {
-  .desktopNav {
-    display: none;
-  }
-}
-
 .menu {
   display: flex;
   gap: 20px;
   list-style: none;
 }
 
+/* Call-to-Action botón (web) */
 .cta {
   background: #ffba00;
   border: none;
@@ -47,74 +65,95 @@
   cursor: pointer;
   margin-left: 20px;
 }
-
-/* Mobile toggle button */
+.cta:hover {
+  background: #e0a800; /* Cambia el fondo al pasar el mouse */
+}
+/* Mobile navigation */
 .mobileToggle {
-  display: none;
-  background: none;
+  display: none; /* Ocultar por defecto, mostrar en mobile */
+  background: transparent;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
+  font-size: 1.5rem;
 }
-
-/* Show mobile toggle on mobile */
-@media (max-width: 768px) {
-  .mobileToggle {
-    display: block;
-  }
+.mobileToggle:focus {
+  outline: none; /* Elimina el borde de enfoque */
 }
-
 /* Mobile menu */
 .mobileMenu {
-  display: none;
+  display: none; /* Ocultar por defecto */
   position: absolute;
-  top: 100%;
+  top: 65px; /* Ajusta según la altura del header */
   right: 0;
   background: #fff;
-  width: 200px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 4px;
-  overflow: hidden;
+  width: 80%;
+  padding: 20px;
 }
 
 .mobileMenu.open {
-  display: block;
+  display: block; /* Mostrar menú móvil cuando está abierto */
 }
 
-.mobileMenu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.mobileMenu li {
-  border-bottom: 1px solid #eee;
-}
-
-.mobileMenu li:last-child {
-  border-bottom: none;
-}
-
+/* Mobile menu items */
 .mobileMenu a,
 .mobileMenu button {
   display: block;
-  width: 100%;
-  padding: 15px;
-  text-align: left;
-  background: none;
-  border: none;
-  cursor: pointer;
+  padding: 5px 10px;
+  color: #333333;
   text-decoration: none;
-  color: #333;
+  font-size: 1rem;
 }
 
-/* Mobile CTA style */
-.ctaMobile {
-  background: #ffba00;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  display: block;
-  margin: 10px 15px;
-  cursor: pointer;
+/* Mobile CTA button */
+
+/* Ocultar desktop nav en mobile */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none; /* Ocultar navegación de escritorio */
+  }
+
+  .mobileToggle {
+    display: block; /* Mostrar botón de menú móvil */
+  }
+
+  .mobileMenu {
+    display: none; /* Ocultar menú móvil por defecto */
+
+  }
+
+  .mobileMenu.open {
+    display: block; /* Mostrar menú móvil cuando está abierto */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  }
 }
+/* Mobile menu items */
+
+/* Mobile CTA button hover effect */
+.ctaMobile:hover {
+  background: #e0a800; /* Cambia el fondo al pasar el mouse */
+}
+/* Mobile toggle button hover effect */
+.mobileToggle:hover {
+  color: #ffba00; /* Cambia el color al pasar el mouse */
+}
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .header {
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logoImage {
+    height: 40px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+  }
+
+  .cta,
+  .ctaMobile {
+    padding: 8px 16px; /* Ajusta el padding de los botones */
+    font-size: 0.9rem; /* Reduce el tamaño de fuente */
+  }
+}
+

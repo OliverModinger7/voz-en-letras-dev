@@ -16,9 +16,12 @@
 /* Grid de cards igual que EligeServicios */
 .cardsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 40px;
   justify-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+
 }
 
 .card {
@@ -26,11 +29,10 @@
   border-radius: 20px;
   padding: 20px;
   width: 100%;
-  max-width: 350px;
+  max-width: 1000px;
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: left;
 }
 
@@ -60,9 +62,14 @@
   line-height: 1.4;
 }
 
+.card ul li {
+  margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+  font-size: 0.9rem; /* Tamaño de fuente para los elementos de la lista */
+} 
+
 /* Estilo del precio resaltado */
 .price {
-  border: 2.5px solid #FEC930;
+  border: 2px solid #FEC930;
   border-radius: 15px;
   padding: 10px 15px;
   font-family: 'Inter', sans-serif;
@@ -84,7 +91,7 @@
 .button {
   background-color: #FFB503;
   color: #fff;
-  padding: 10px 20px;
+  padding: 5px 50px;
   border: none;
   border-radius: 30px;
   font-family: 'Inter', sans-serif;
