@@ -33,8 +33,8 @@ const CotizaForm: React.FC = () => {
   };
 
   return (
-    <section className={styles.formSection}>
-      <h2 className={styles.title}>Cotiza con nosotros_</h2>
+    <section id='cotiza' className={styles.formSection}>
+      <h2 className={styles.title}>Cotiza con nosotros</h2>
       <form className={styles.form} onSubmit={handleSubmit}>
 
         {/* Nombre completo */}
