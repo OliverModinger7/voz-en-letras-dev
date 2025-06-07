@@ -1,7 +1,7 @@
-import styles from '../styles/TrabajamosCon.module.css';
+import styles from '../styles/WorksWithSection.module.css';
 import Image from 'next/image';
 
-const TrabajamosCon = () => (
+const WorksWithSection = () => (
   <section id="works" className={styles.works}>
     <h2>Trabajamos con...</h2>
     <div className={styles.grid}>
@@ -53,4 +53,4 @@ const TrabajamosCon = () => (
   </section>
 );
 
-export default TrabajamosCon;
+export default WorksWithSection;

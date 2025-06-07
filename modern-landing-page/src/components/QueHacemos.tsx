@@ -1,11 +1,11 @@
-import styles from '../styles/QueHacemos.module.css';
+import styles from '../styles/TwoColumnSection.module.css';
 import React from 'react';
 import Image from 'next/image';
 
 
-const QueHacemos = () => (
+const TwoColumnSection = () => (
   <section className={styles.twoColumn}>
-    <div id="what" className={styles.column}>
+    <div id="quehacemos" className={styles.column}>
       <h2>¿Qué hacemos?</h2>
       <p>
         Transformamos tus audios en texto <strong>preciso, rápido y confiable</strong>.
@@ -50,4 +50,4 @@ const QueHacemos = () => (
   </section>
 );
 
-export default QueHacemos;
+export default TwoColumnSection;

@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
-import styles from '../styles/Home.module.css';
 import Land from 'components/Land';
 import Image from 'next/image';
 import Head from 'next/head';

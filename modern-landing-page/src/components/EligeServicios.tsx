@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from '../styles/EligeServicios.module.css';
+import styles from '../styles/Servicio.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function EligeServicios() {
   return (
@@ -19,7 +20,7 @@ export default function EligeServicios() {
             <li>Entrega en 72 hrs</li>
           </ul>
           <p className={styles.price}>$150/minuto</p>
-          <a href="#contacto" className={styles.button}>Elegir Plan Básico</a>
+          <Link href="#cotiza" className={styles.button}>Elegir Plan Básico</Link>          
         </div>
         <div className={styles.card}>
           <h3>Plan Profesional</h3>
@@ -33,7 +34,7 @@ export default function EligeServicios() {
             <li>Entrega en 48 hrs</li>
           </ul>
           <p className={styles.price}>$220/minuto</p>
-          <a href="#contacto" className={styles.button}>Elegir Plan Profesional</a>
+          <Link href="#cotiza" className={styles.button}>Elegir Plan Profesional</Link>
         </div>
         <div className={styles.card}>
           <h3>Plan Premium</h3>
@@ -47,7 +48,7 @@ export default function EligeServicios() {
             <li>Entrega en 24 hrs</li>
           </ul>
           <p className={styles.price}>$300/minuto</p>
-          <a href="#contacto" className={styles.button}>Elegir Plan Premium</a>
+          <Link href="#cotiza" className={styles.button}>Elegir Plan Premium</Link>
         </div>
       </div>
     </section>
