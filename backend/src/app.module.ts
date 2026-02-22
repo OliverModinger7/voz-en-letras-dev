@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FormulariosModule } from './formularios/formularios.module';
 import { MailerModule } from '@nestjs-modules/mailer';
@@ -20,7 +20,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         return connection;
       }
     }),
-    MailerModule.forRoot({
+    MailerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
