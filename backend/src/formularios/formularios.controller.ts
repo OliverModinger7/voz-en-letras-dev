@@ -18,5 +18,9 @@ export class FormulariosController {
       );
     }
   }
-
+  @Get()
+  async findAll() {
+    // Esto asume que tienes un método findAll() en tu formulariosService
+    return { message: "API de formularios funcionando correctamente" }; 
+  }
 }
