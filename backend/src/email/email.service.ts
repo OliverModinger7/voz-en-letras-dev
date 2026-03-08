@@ -43,7 +43,7 @@ export class EmailService {
   async sendAdminNotification(formulario: any) {
     try {
       await this.mailerService.sendMail({
-        to: 'vozenletraschile@gmail.com',
+        to: 'modingeroliver@gmail.com',
         subject: `📋 Nueva solicitud de cotización - ${formulario.nombre}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
