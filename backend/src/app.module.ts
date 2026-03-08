@@ -37,7 +37,7 @@ import { EmailModule } from './email/email.module';
         transport: {
           host: configService.get('SMTP_HOST'),
           port: configService.get('SMTP_PORT'),
-          secure: false,
+          secure: true,
           auth: {
             user: configService.get('SMTP_USER'),
             pass: configService.get('SMTP_PASSWORD'),
