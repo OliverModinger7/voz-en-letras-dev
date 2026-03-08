@@ -5,10 +5,19 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FormulariosModule } from './formularios/formularios.module';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { Injectable } from '@nestjs/common';
+import { MailerService } from '@nestjs-modules/mailer';
+import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot(
+      {
+        isGlobal: true,
+        envFilePath: '.env',
+      }
+    ),
+
     MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb+srv://modingeroliver:Olivercolopa1@clustertst.cb6tmee.mongodb.net/voz-en-letras', {
       connectionFactory: (connection) => {
         connection.on('connected', () => {
@@ -20,6 +29,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         return connection;
       }
     }),
+
     MailerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -38,6 +48,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         },
       }),
     }),
+    EmailModule,
     FormulariosModule,
   ],
   controllers: [AppController],
