@@ -24,7 +24,7 @@ export class EmailService {
             </div>
             
             <p>Nos pondremos en contacto contigo pronto para confirmar los detalles y proceder con tu solicitud.</p>
-            <p style="color: #666; font-size: 14px;">Si tienes dudas, contacta a: <strong>vozenletraschile@gmail.com</strong></p>
+            <p style="color: #666; font-size: 14px;">Si tienes dudas, contacta a: <strong>contacto@vozenletras.cl</strong></p>
             
             <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
             <p style="text-align: center; color: #999; font-size: 12px;">
