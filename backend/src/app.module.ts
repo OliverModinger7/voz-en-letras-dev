@@ -1,14 +1,23 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FormulariosModule } from './formularios/formularios.module';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { Injectable } from '@nestjs/common';
+import { MailerService } from '@nestjs-modules/mailer';
+import { EmailModule } from './email/email.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot(
+      {
+        isGlobal: true,
+        envFilePath: '.env',
+      }
+    ),
+
     MongooseModule.forRoot(process.env.MONGO_URI || 'mongodb+srv://modingeroliver:Olivercolopa1@clustertst.cb6tmee.mongodb.net/voz-en-letras', {
       connectionFactory: (connection) => {
         connection.on('connected', () => {
@@ -20,14 +29,15 @@ import { MailerModule } from '@nestjs-modules/mailer';
         return connection;
       }
     }),
-    MailerModule.forRoot({
+
+    MailerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => ({
         transport: {
           host: configService.get('SMTP_HOST'),
           port: configService.get('SMTP_PORT'),
-          secure: false,
+          secure: true,
           auth: {
             user: configService.get('SMTP_USER'),
             pass: configService.get('SMTP_PASSWORD'),
@@ -38,6 +48,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         },
       }),
     }),
+    EmailModule,
     FormulariosModule,
   ],
   controllers: [AppController],

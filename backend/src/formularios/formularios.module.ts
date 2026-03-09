@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { FormulariosService } from './formularios.service';
 import { FormulariosController } from './formularios.controller';
 import { Formulario, FormularioSchema } from './schemas/formulario.schema';
+import { EmailModule } from '../email/email.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { Formulario, FormularioSchema } from './schemas/formulario.schema';
         }
       ]
     ),
+    EmailModule,
   ],
   controllers: [FormulariosController],
   providers: [FormulariosService],
